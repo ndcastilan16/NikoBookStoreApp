@@ -9,11 +9,11 @@ let serviceinfo;
 let serviceBtn;
 const BuyBook = (props) => {
     i += 1;
-    serviceinfo = "serviceInfo" + i;
+    serviceinfo = "serviceInfo-" + i;
     serviceBtn = "serviceBtn" + i;
-    var valueM = i + "M";
-    var valueT = i + "T";
-    var valueA = i + "A";
+    var valueM = i + "-M";
+    var valueT = i + "-T";
+    var valueA = i + "-A";
 
     return (
 
@@ -34,14 +34,16 @@ const BuyBook = (props) => {
                 <center>
             <p className = "title">Ship via</p>
         
-                    <button id={serviceBtn} value={valueM} className="delivery_M" onClick={viaMotor} name="Motorbike">Motorbike</button>
-                    <button id={serviceBtn} value={valueT} className="delivery_T" onClick={viaMotor} name="Train">Train</button>
-                    <button id={serviceBtn} value={valueA} className="delivery_A" onClick={viaMotor} name="Aircraft">Aircraft</button>
-                    <div id={serviceinfo} className = "serviceInfo">
+                    <button id={serviceBtn} value={valueM} className="delivery_M" onClick={shipping} name="Motorbike">Motorbike</button>
+                    <button id={serviceBtn} value={valueT} className="delivery_T" onClick={shipping} name="Train">Train</button>
+                    <button id={serviceBtn} value={valueA} className="delivery_A" onClick={shipping} name="Aircraft">Aircraft</button>
+
+                    <form onSubmit={deliver} action="">
+                    <div id={serviceinfo} className="serviceInfo">
 
 
                      </div>
-            
+                    </form>
             </center>
              </div>
            
@@ -51,7 +53,14 @@ const BuyBook = (props) => {
     )
 }
 
-const viaMotor = (e) => {
+
+
+
+const deliver = () => {
+    alert('Thank you for your purchase, We will now process your delivery details.');
+}
+
+const shipping = (e) => {
 
     var driverName = ['Shaun', 'Veeren', 'Govindu'];
     var mobile = ['0275513678', '0275513678', '0275513678'];
@@ -72,12 +81,12 @@ const viaMotor = (e) => {
     var cost;
     var targetValue = e.target.value.toString();
     var header;
-    var resetElement;
-    var serviceInfo = "serviceInfo" + targetValue.charAt(0);
 
+    var splitId = targetValue.split("-");
 
+    var serviceInfo = "serviceInfo-" + splitId[0];
 
-
+    // Get full date in dd/mm/yyyy format
     function getFullDate() {
 
         var date = new Date();
@@ -90,22 +99,23 @@ const viaMotor = (e) => {
         return ddmmyyyy;
     }
 
+    // get base factor
     function getFactor() {
 
         var date = new Date();
         var m = date.getMonth + 1
-        var factor;
+        var factor;  
         switch (m) {
+            // for June to Aug
             case 6:
             case 7:
             case 8:
                 factor = 0
             break;
-
+            // for September
             case 9:
                 factor = 1
                 break;
-
             default:
                 factor = 2
 
@@ -113,8 +123,8 @@ const viaMotor = (e) => {
 
         return factor;
     }
-
-    switch (targetValue.charAt(1)) {
+    // Populate Delivery Details
+    switch (splitId[1]) {
         case "M":
             header = "Motorbike";
             lblFrstProp = "Driver Name: " + driverName[random]
@@ -148,9 +158,9 @@ const viaMotor = (e) => {
             break;
 
         default:
-        // code block
-    }
 
+    }
+    //Remove Child
     var list = document.getElementById(serviceInfo);
     if (list.hasChildNodes()) {
 
@@ -161,7 +171,7 @@ const viaMotor = (e) => {
 
     }
 
-  
+    //Create delivery Details
     var node = document.createElement('H3');
     var textnode = document.createTextNode(header + " Delivery Details:")
     node.appendChild(textnode);
@@ -190,12 +200,11 @@ const viaMotor = (e) => {
 
 
     node = document.createElement('button');
-    textnode = document.createTextNode('Buy')
+    textnode = document.createTextNode('Confirm Delivery')
     node.appendChild(textnode);
     document.getElementById(serviceInfo).appendChild(node);
 }
 
-  
 
 export default BuyBook;
 

@@ -7,6 +7,18 @@ My code was created using .net Core with the following patterns/pattern:
 2. Used React to develop the Book Application
 3. Wasn't able to fully used some React Libraries like the Modal and Cards libraries(was losing time so I have to do it manually"
 4. Tried  to make my code to comply with the SOLID guidelines
+5. Originally planned to make a class for the different shipping options.
+6. Wasn't able to make other functionalities reusable.
+
+
+Functionalities:
+
+1. User can search for a book by author or title
+2. Pop up box will apear when the "buy" button is clicked
+3. Delivery Details will be generated depending on the shipping option
+4. User is able to confirm delivery details and buy the book
+5. User can view details
+
 
 Time Summary:
 
@@ -21,8 +33,6 @@ Styling: 2 hours
   -took me an hour to align those cards
 Builindg and testing: 1 hour
 
-Bugs:
-Need to double click "buy" button to show the popup
 
 Summary:
 -will restructure my code if theres time,I'm starting to get familiar on .net core

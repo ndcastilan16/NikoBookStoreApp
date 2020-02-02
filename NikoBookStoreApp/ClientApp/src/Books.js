@@ -42,7 +42,7 @@ export default class Books extends Component {
         this.setState({ searchBy: e.target.value })
     
     }
-
+    //populate date if there's a missing value
     cleanData = (data) => {
         const cleanedData = data.body.items.map((book) => {
 
