@@ -1,5 +1,6 @@
 ﻿import React, { Component } from 'react';
-import BuyBook  from './BuyBook';
+import BuyBook from './BuyBook';
+
 
 let i = 0;
 let modalId;

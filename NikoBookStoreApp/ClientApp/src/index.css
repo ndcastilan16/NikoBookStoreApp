@@ -63,6 +63,7 @@ float:left;
 }
 .card__image-container {
     width: 50;
+    margin-top: 10px;
     padding-top: 56.25%;
     overflow: hidden;
     position: relative;
@@ -244,10 +245,49 @@ float:left;
 /* The Close Button */
 .close {
     color: #000;
-    background-color: #2196F3; /* Black w/ opacity */
     float: right;
     font-size: 50px;
     font-weight: bold;
+   text-align: right;
 }
 
+
+.delivery_M {
+    background-color: blue;
+    border: none;
+    outline: 0;
+    margin-bottom: 5px;
+    padding: 12px;
+    color: white;
+}
+
+.delivery_T {
+    background-color: orange;
  
+    border: none;
+    outline: 0;
+    margin-bottom: 5px;
+    padding: 12px;
+    color: white;
+}
+.delivery_A {
+    background-color: red;
+    border: none;
+    outline: 0;
+    margin-bottom: 5px;
+    padding: 12px;
+    color: white;
+}
+
+.serviceInfo button {
+    border: none;
+    outline: 0;
+    margin-bottom: 5px;
+    padding: 12px;
+    color: white;
+    background-color: green;
+    text-align: center;
+    cursor: pointer;
+    width: 65%;
+    font-size: 18px;
+}
