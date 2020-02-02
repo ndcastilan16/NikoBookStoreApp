@@ -22,16 +22,20 @@ Functionalities:
 
 Time Summary:
 
-Preparation: 1 hour
+1. Preparation: 1 hour
   - Was initially just gonna use react by itself but decided to make a risk.
-.Net Core interface Research/Familiarization: 1 hour
+
+2. .Net Core interface Research/Familiarization: 1 hour
   -Was thinking if ever I get hired might as well train myself to the IDE that FIG is using
-Coding: 10 hours
+
+3. Coding: 10 hours
   -I took the risk of using an unfamiliar environment but was able to get a hang of it in the end.
   -experimented on how C# codes is gonna get passed to javascript.
-Styling: 2 hours
+
+4. Styling: 2 hours
   -took me an hour to align those cards
-Builindg and testing: 1 hour
+
+5. Builindg and testing: 1 hour
 
 
 Summary:
