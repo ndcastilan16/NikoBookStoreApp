@@ -22,7 +22,7 @@ const BuyBook = (props) => {
                 <center>
             <p className = "title">Ship via</p>
         
-                <button class="btn btn-primary btn-sm">MotorBike</button>
+                 <button class="btn btn-primary btn-sm">MotorBike</button>
                 <button class="btn btn-warning btn-sm">Train</button>
                 <button class="btn btn-danger btn-sm ">Aircraft</button>
             </center>

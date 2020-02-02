@@ -4,10 +4,7 @@ import BookCard from './BookCard';
 
 const BookList = (props) => {
     return (
-    
-
-
-            <main>
+         <main>
                 <section className="cards">
     
             {

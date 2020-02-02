@@ -1,20 +1,14 @@
 ﻿import React, { Component } from 'react';
-import ReactDOM from "react-dom";
-import { Button, ButtonToolBar } from 'react-bootstrap';
 import BuyBook  from './BuyBook';
-import { Modal } from 'react-overlays';
-import { FetchData } from './components/FetchData';
 
-let state = { show: false };
 let i = 0;
 let modalId;
-let buttonId;
 let closeId;
+
 const BookCard = (props) => {
 
     i += 1;
     modalId = 'modal' + i;
-    buttonId = 'button' + i;
     closeId = 'close' + i;
     return (
   
@@ -27,8 +21,8 @@ const BookCard = (props) => {
                 <div className = "card__content">
                 <p class="card__title ">{props.title}</p>
                     
-                <p>{props.author}</p>
-                <p>{props.publishedDate}</p>
+                <p>Author: {props.author}</p>
+                <p>Published Date: {props.publishedDate === '0000' ? 'Not Available' : props.publishedDate.substring(0,4)}</p>
                 <div className  = "card__footer">
                     <p ><button className="card__button" value={i} id={i} onClick={showModal}>Buy it</button></p>
             </div>
@@ -46,33 +40,21 @@ const BookCard = (props) => {
 
             </div>
      
-
-      
-
             
     )
 
 
 }
 
-
 const showModal = (e) => {
     
 
-
-    // Get the modal
     var modal = document.getElementById('modal'+ e.target.value);
-
-    // Get the button that opens the modal
     var btn = document.getElementById(e.target.value);
-
-  
-    // Get the <span> element that closes the modal
     var span = document.getElementById('close'+e.target.value);
 
-    // When the user clicks the button, open the modal 
+
     btn.onclick = function () {
-   //     modal.style.display = "block";
  
         if (!modal.style.display || modal.style.display == "none") {
             modal.style.display = "block";
@@ -81,28 +63,19 @@ const showModal = (e) => {
             modal.style.display = "none";
         }
 
-
-
-
     }
 
-    // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
         modal.style.display = "none";
 
-     
     }
 
-    // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
        
         }
     }
-
-
-
  
 };
        

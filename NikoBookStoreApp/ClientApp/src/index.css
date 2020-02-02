@@ -153,6 +153,7 @@ float:left;
 .topnav {
     overflow: hidden;
     background-color: #2196F3;
+ 
 }
 
     .topnav .search-container button {
@@ -164,6 +165,7 @@ float:left;
         font-size: 17px;
         border: none;
         cursor: pointer;
+        margin-left: 10px;
     }
     .topnav .search-container {
         float: left;
@@ -176,6 +178,15 @@ float:left;
         border: none;
     }
 
+    .topnav select {
+        padding: 10px;
+        margin-top: 6px;
+        font-size: 15px;
+        border: none;
+        margin-left: 10px;
+    }
+
+   
 
     .topnav p {
         float: left;
