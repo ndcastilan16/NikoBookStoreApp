@@ -23,11 +23,12 @@ const BookCard = (props) => {
                     
                 <p>Author: {props.author}</p>
                 <p>Published Date: {props.publishedDate === '0000' ? 'Not Available' : props.publishedDate.substring(0,4)}</p>
-                <div className  = "card__footer">
-                    <p ><button className="card__button" value={i} id={i} onClick={showModal}>Buy it</button></p>
-            </div>
+          
+
                 </div>
-   
+            <div className="card__footer">
+                <p ><button className="card__button" value={i} id={i} onClick={showModal}>Buy it</button></p>
+            </div>
             <div id={modalId} className="modal" >
 
 
